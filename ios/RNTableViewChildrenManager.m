@@ -19,6 +19,6 @@ RCT_EXPORT_MODULE()
 }
 
 RCT_EXPORT_VIEW_PROPERTY(rowHeight, float)
-RCT_EXPORT_VIEW_PROPERTY(dataSourceSize, NSInteger)
+RCT_EXPORT_VIEW_PROPERTY(numRows, NSInteger)
 
 @end

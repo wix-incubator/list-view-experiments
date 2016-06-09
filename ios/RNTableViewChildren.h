@@ -14,6 +14,6 @@
 - (instancetype)initWithBridge:(RCTBridge *)bridge NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic) float rowHeight;
-@property (nonatomic) NSInteger dataSourceSize;
+@property (nonatomic) NSInteger numRows;
 
 @end

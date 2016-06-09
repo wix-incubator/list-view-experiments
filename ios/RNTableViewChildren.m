@@ -95,7 +95,7 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
 
 - (NSInteger)tableView:(UITableView *)theTableView numberOfRowsInSection:(NSInteger)section
 {
-  return self.dataSourceSize;
+  return self.numRows;
 }
 
 - (UIView*) getUnusedCell {
@@ -127,8 +127,8 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
   NSDictionary *event = @{
                           @"target": cell.cellView.reactTag,
                           @"childIndex": @(cell.cellView.tag),
-                          @"row": @(indexPath.row),
-                          @"section": @(indexPath.section),
+                          @"rowID": @(indexPath.row),
+                          @"sectionID": @(indexPath.section),
                         };
   
   [_eventDispatcher sendInputEventWithName:@"onChange" body:event];

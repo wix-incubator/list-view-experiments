@@ -1,51 +1,52 @@
 import React, { Component } from 'react';
 import {
   requireNativeComponent,
-  View,
-  Text
+  View
 } from 'react-native';
+import ReboundRenderer from './ReboundRenderer';
 
 const RNTableViewChildren = requireNativeComponent('RNTableViewChildren', null);
 
-const ROWS_IN_DATA_SOURCE = 3000;
 const ROWS_FOR_RECYCLING = 20;
-
-const dataSource = [];
-for (let i=0; i<ROWS_IN_DATA_SOURCE; i++) dataSource.push(`This is row # ${i+1} mano`);
 
 export default class TableViewChildren extends Component {
   constructor(props) {
     super(props);
-    const arr = [];
-    for (let i=0; i<ROWS_FOR_RECYCLING; i++) arr.push(-1);
+    const binding = [];
+    for (let i=0; i<ROWS_FOR_RECYCLING; i++) binding.push(-1);
     this.state = {
-      mapping: arr // childIndex -> rowID
+      binding: binding // childIndex -> rowID
     };
   }
   render() {
+    const bodyComponents = [];
+    for (let i=0; i<ROWS_FOR_RECYCLING; i++) {
+      bodyComponents.push(
+        <ReboundRenderer
+          key={'r_' + i}
+          boundTo={this.state.binding[i]}
+          render={this.props.renderRow}
+        />
+      );
+    }
     return (
       <View style={{flex: 1}}>
         <RNTableViewChildren
           style={{flex: 1}}
-          onChange={this.onChange.bind(this)}
-          rowHeight={50}
-          dataSourceSize={dataSource.length}
+          onChange={this.onBind.bind(this)}
+          rowHeight={this.props.rowHeight}
+          numRows={this.props.numRows}
         >
-          {this.state.mapping.map((rowID, childIndex) => this.renderRow(childIndex, rowID))}
+          {bodyComponents}
         </RNTableViewChildren>
       </View>
     );
   }
-  renderRow(childIndex, rowID) {
-    return (
-      <Text key={childIndex} style={{width: 200, height: 50}}>{dataSource[rowID]}</Text>
-    );
-  }
-  onChange(event) {
-    const {target, childIndex, row, section} = event.nativeEvent;
-    this.state.mapping[childIndex] = row;
+  onBind(event) {
+    const {target, childIndex, rowID, sectionID} = event.nativeEvent;
+    this.state.binding[childIndex] = rowID;
     this.setState({
-      mapping: this.state.mapping
+      binding: this.state.binding
     });
   }
 }
