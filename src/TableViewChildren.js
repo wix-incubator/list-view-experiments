@@ -29,6 +29,8 @@ export default class TableViewChildren extends Component {
         />
       );
     }
+    // TODO: optimize by making the UITableView bigger than the visible screen (adding a buffer)
+    // so the re-renders that happen asynchronously will happen on cells that aren't visible yet
     return (
       <View style={{flex: 1}}>
         <RNTableViewChildren

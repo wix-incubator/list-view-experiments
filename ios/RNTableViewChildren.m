@@ -71,9 +71,6 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
   //   [super insertSubview:subview atIndex:atIndex];
   
   [_unusedCells addObject:subview];
-  if ([_unusedCells count] == 2) {
-    [_tableView reloadData];
-  }
 }
 
 - (void)layoutSubviews {
@@ -84,8 +81,13 @@ RCT_NOT_IMPLEMENTED(-initWithCoder:(NSCoder *)aDecoder)
   _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
   _tableView.dataSource = self;
   _tableView.delegate = self;
-  _tableView.backgroundColor = [UIColor clearColor];
+  _tableView.backgroundColor = [UIColor whiteColor];
   [self addSubview:_tableView];
+}
+
+- (void)setRowHeight:(float)rowHeight {
+  _tableView.estimatedRowHeight = rowHeight;
+  _rowHeight = rowHeight;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)theTableView
