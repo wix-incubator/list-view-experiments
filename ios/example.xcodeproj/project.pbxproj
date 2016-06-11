@@ -23,6 +23,8 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		CCE6D0A71D08961D00F81E39 /* RNTableViewChildrenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE6D0A61D08961D00F81E39 /* RNTableViewChildrenManager.m */; };
 		CCE6D0AA1D08A2B200F81E39 /* RNTableViewChildren.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE6D0A91D08A2B200F81E39 /* RNTableViewChildren.m */; };
+		CCE6D0B11D0B6B7D00F81E39 /* RNInfiniteScrollViewChildren.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE6D0AE1D0B6B7D00F81E39 /* RNInfiniteScrollViewChildren.m */; };
+		CCE6D0B21D0B6B7D00F81E39 /* RNInfiniteScrollViewChildrenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE6D0B01D0B6B7D00F81E39 /* RNInfiniteScrollViewChildrenManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +132,10 @@
 		CCE6D0A61D08961D00F81E39 /* RNTableViewChildrenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNTableViewChildrenManager.m; sourceTree = "<group>"; };
 		CCE6D0A81D08A2B200F81E39 /* RNTableViewChildren.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNTableViewChildren.h; sourceTree = "<group>"; };
 		CCE6D0A91D08A2B200F81E39 /* RNTableViewChildren.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNTableViewChildren.m; sourceTree = "<group>"; };
+		CCE6D0AD1D0B6B7D00F81E39 /* RNInfiniteScrollViewChildren.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNInfiniteScrollViewChildren.h; sourceTree = "<group>"; };
+		CCE6D0AE1D0B6B7D00F81E39 /* RNInfiniteScrollViewChildren.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNInfiniteScrollViewChildren.m; sourceTree = "<group>"; };
+		CCE6D0AF1D0B6B7D00F81E39 /* RNInfiniteScrollViewChildrenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNInfiniteScrollViewChildrenManager.h; sourceTree = "<group>"; };
+		CCE6D0B01D0B6B7D00F81E39 /* RNInfiniteScrollViewChildrenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNInfiniteScrollViewChildrenManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,12 +318,32 @@
 		CCE6D0A41D08958900F81E39 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				CCE6D0AC1D0B6B6800F81E39 /* InfiniteScrollViewChildren */,
+				CCE6D0AB1D0B6B5700F81E39 /* TableViewChildren */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		CCE6D0AB1D0B6B5700F81E39 /* TableViewChildren */ = {
+			isa = PBXGroup;
+			children = (
 				CCE6D0A51D08961D00F81E39 /* RNTableViewChildrenManager.h */,
 				CCE6D0A61D08961D00F81E39 /* RNTableViewChildrenManager.m */,
 				CCE6D0A81D08A2B200F81E39 /* RNTableViewChildren.h */,
 				CCE6D0A91D08A2B200F81E39 /* RNTableViewChildren.m */,
 			);
-			name = src;
+			name = TableViewChildren;
+			sourceTree = "<group>";
+		};
+		CCE6D0AC1D0B6B6800F81E39 /* InfiniteScrollViewChildren */ = {
+			isa = PBXGroup;
+			children = (
+				CCE6D0AF1D0B6B7D00F81E39 /* RNInfiniteScrollViewChildrenManager.h */,
+				CCE6D0B01D0B6B7D00F81E39 /* RNInfiniteScrollViewChildrenManager.m */,
+				CCE6D0AD1D0B6B7D00F81E39 /* RNInfiniteScrollViewChildren.h */,
+				CCE6D0AE1D0B6B7D00F81E39 /* RNInfiniteScrollViewChildren.m */,
+			);
+			name = InfiniteScrollViewChildren;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -560,6 +586,8 @@
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				CCE6D0A71D08961D00F81E39 /* RNTableViewChildrenManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				CCE6D0B21D0B6B7D00F81E39 /* RNInfiniteScrollViewChildrenManager.m in Sources */,
+				CCE6D0B11D0B6B7D00F81E39 /* RNInfiniteScrollViewChildren.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

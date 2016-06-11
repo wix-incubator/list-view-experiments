@@ -7,6 +7,7 @@ import { AppRegistry,
 } from 'react-native';
 
 import TableViewChildrenExample from './tableview-children';
+import InfiniteScrollViewChildrenExample from './infinite-scrollview-children';
 
 class example extends Component {
   constructor(props) {
@@ -24,8 +25,14 @@ class example extends Component {
       <View style={styles.container}>
 
         <TouchableOpacity onPress={() => this.setState({example: TableViewChildrenExample})}>
-          <Text style={{color: 'blue'}}>
-            TableView Children
+          <Text style={{color: 'blue', marginBottom: 20}}>
+            TableView with Children
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.setState({example: InfiniteScrollViewChildrenExample})}>
+          <Text style={{color: 'blue', marginBottom: 20}}>
+            Infinite ScrollView with Children
           </Text>
         </TouchableOpacity>
 
